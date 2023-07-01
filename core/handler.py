@@ -127,14 +127,25 @@ def handle_sniffer():
         std_error("Failed to capture packets", error=error)
 
 
-def handle_report_generator():
+def handle_file_checker():
     """
-    Handle inputs required for calling the generate_report function.
+    Handle inputs required for initializing a new FileChecker instance and
+    calling its perform_integrity_check function.
     """
 
-    # Get required report inputs from the user.
-    output_file = std_input("Report file (ex. report.csv)", start="\n")
+    # Get required integrity checker inputs from the user.
+    display_str = std_input("Display the checked files? (y/n)", start="\n")
+    display = (display_str=="y")
 
-    std_error("This function is incomplete")
+    try:
+        std_info("Attempting to perform a system integrity check", start="\n")
+        std_info("Press CTRL-C to stop checking")
 
-    return output_file
+        # Create a new FileChecker instance.
+        checker = FileChecker()
+        checker.perform_integrity_check(display=display)
+
+    # KeyboardInterrupt Exception is handled when checking the files.
+    except Exception as error:
+        # Unknown error encountered.
+        std_error("Failed to capture packets", start="\n", error=error)
