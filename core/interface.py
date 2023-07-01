@@ -15,7 +15,8 @@ class Interface:
         self.options = {
             "1": ("Host Pinger", handle_pinger),
             "2": ("Host Scanner", handle_scanner),
-            "3": ("Packet Sniffer", handle_sniffer)
+            "3": ("Packet Sniffer", handle_sniffer),
+            "4": ("Integrity Check", handle_file_checker)
         }
 
     def display_menu(self):
