@@ -8,3 +8,4 @@
 from core.tools.pinger import *  # Pinger
 from core.tools.sniffer import *  # PacketSniffer
 from core.tools.scanner import *  # Scanner
+from core.tools.file_checker import * # FileChecker
