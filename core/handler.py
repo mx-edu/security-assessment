@@ -148,4 +148,4 @@ def handle_file_checker():
     # KeyboardInterrupt Exception is handled when checking the files.
     except Exception as error:
         # Unknown error encountered.
-        std_error("Failed to capture packets", start="\n", error=error)
+        std_error("Failed to check files", start="\n", error=error)
